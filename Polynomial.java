@@ -163,4 +163,36 @@ public class Polynomial {
 		muln(p1.poly1,p1.poly2);
 	}
 
+
 }
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Polynomial {
+	
+	String polynomial;
+	public static void stringToHash(String poly)
+	{
+		String replace=poly.replace("-", "+-");
+	    System.out.println(replace);
+	    String[] splitString = (replace.split("\\+"));
+	    
+	     for (String string : splitString) {
+	    	 System.out.println(string);
+	         int length=string.length();
+	         if(string.indexOf('x')>=0)
+	         {
+	        	 string=string+"x^0";
+	         }
+	         String[] splithash=string.split("[x]\\^");
+	         for(String string1:splithash)
+	         System.out.println(string1);
+	     }
+	}
+	public static void main(String args[]){
+		stringToHash("2x^5+2x^1-3x^1+4");
+	
+	}
+}
+
